@@ -1,0 +1,48 @@
+name: Publish POST
+
+on:
+  push:
+    paths:
+      - 'posts/**/*.md'
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    environment: Supabase
+    
+    steps:
+      - uses: actions/checkout@v2.1.0
+
+      - uses: jitterbit/get-changed-files@v1
+        id: changed_files
+        with:
+          format: space-delimited
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Printing
+        run: |
+          echo "All:"
+          echo "${{ steps.changed_files.outputs.all }}"
+          echo "Added:"
+          echo "${{ steps.changed_files.outputs.added }}"
+          echo "Removed:"
+          echo "${{ steps.changed_files.outputs.removed }}"
+          echo "Renamed:"
+          echo "${{ steps.changed_files.outputs.renamed }}"
+          echo "Modified:"
+          echo "${{ steps.changed_files.outputs.modified }}"
+          echo "Added+Modified:"
+          echo "${{ steps.changed_files.outputs.added_modified }}"
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run JavaScript script
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: node check-frontmatter.js ${{ steps.changed_files.outputs.added_modified }} ${{ steps.changed_files.outputs }}
