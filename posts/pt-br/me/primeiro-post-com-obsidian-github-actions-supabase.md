@@ -18,10 +18,6 @@ series: Postagem automatizada via obsidian
 # Primeiro post com obsidian + GitHub Actions + Supabase
  
 
-
-
-
-
 ## Introdução  
 
  
