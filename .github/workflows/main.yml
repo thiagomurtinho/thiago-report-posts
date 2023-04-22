@@ -45,4 +45,4 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: node check-frontmatter.js ${{ steps.changed_files.outputs.added_modified }} ${{ steps.changed_files.outputs }}
+        run: node check-frontmatter.js ${{ steps.changed_files.outputs }}
