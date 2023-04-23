@@ -48,4 +48,4 @@ jobs:
           DELETED: ${{ steps.changed-files.outputs.deleted_files }}
           MODIFIED: ${{ steps.changed-files.outputs.all_changed_files }}
           RENAMED: ${{ steps.changed-files.outputs.renamed_files }}
-        run: node check-frontmatter.js ${{ steps.changed-files.outputs.all_changed_and_modified_files }}
+        run: node check-frontmatter.js ${{ steps.changed-files.outputs }}
