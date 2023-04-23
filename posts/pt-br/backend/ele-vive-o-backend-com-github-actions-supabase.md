@@ -16,7 +16,7 @@ tags: [github-actions, supabase, obsidian]
 tags: #github-actions #supabase #obsidian 
 series: 
 
-# Ele VIVE! O backend com GitHub Actions + Supabase
+# Ele VIVE!! O backend com GitHub Actions + Supabase
 
 
 ## Introdução 
