@@ -9,8 +9,8 @@ async function processFiles(files) {
 
 const modifiedFiles = process.argv.slice(2);
 
-const envs = process.env;
+const { CHANGED_FILES } = process.env;
 
-console.log('envs:', envs)
+console.log('envs:', JSON.stringify(JSON.parse(CHANGED_FILES), null , 2))
 
 processFiles(modifiedFiles);
