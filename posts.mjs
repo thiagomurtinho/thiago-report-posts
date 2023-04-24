@@ -5,28 +5,36 @@
  * - [ ] Enviar oublished_at para o supabase ao criar arquivo com draft false ou ao modificar arquivo para draft false
  */
 
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 dotenv.config();
 
-import { convertFrontmatter, convertStringToArray } from "./utils.mjs"
-import { createPost, createPostTagFk, createTag, deletePost, searchTag, updatePost} from "./supabase.mjs"
+import { convertFrontmatter, convertStringToArray } from "./utils.mjs";
+import {
+  createPost,
+  createPostTagFk,
+  createTag,
+  deletePost,
+  searchTag,
+  updatePost,
+} from "./supabase.mjs";
 
-const { added_files,
+const {
+  added_files,
   deleted_files,
   modified_files,
   copied_files,
-  renamed_files
+  renamed_files,
 } = process.env;
 
-
-modified_files.concat(copied_files, renamed_files)
+modified_files.concat(copied_files, renamed_files);
 async function processPost() {
   if (added_files) {
+    console.log("🦄 Added files:", added_files);
     const files = convertStringToArray(added_files);
 
     for (const file of files) {
       if (!file.endsWith(".md")) {
-        continue;
+        return;
       }
 
       const { post, tagList } = convertFrontmatter(file);
@@ -35,75 +43,82 @@ async function processPost() {
       for (const tag of tagList) {
         const { data: tagDB, error: tagError } = await createTag(tag.name);
         if (!tagDB) {
-          console.log("Tag error:", tagError.details);
-          continue;
-        }
-        createdTags.push(tagDB);
-      }
-      console.log("Created tags:")
-      console.table(createdTags)
-
-
-      const { data: postDB, erro: postError } = await createPost(post)
-      if (!postDB) {
-        console.log("Post error:", postError.details);
-        continue;
-      }
-      const { created_at, title, path, series } = postDB[0]
-      console.log("Created post:")
-      console.table([{
-        created_at,
-        title,
-        path,
-        series
-      }])
-
-      const tagsBD = []
-      for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await searchTag(tag)
-        if (!tagDB) {
           console.log("Tag error:", tagError);
-          continue;
+        } else {
+          createdTags.push(...tagDB);
         }
-        tagsBD.push(...tagDB)
       }
-      console.log("List tags:")
-      console.table(tagsBD)
+      console.log("Create tags:", !!createdTags.length);
+      console.table(createdTags);
 
-      const posTagsFK = []
-      for (const tag of tagsBD) {
-        const { data, error: dataError } = await createPostTagFk(postDB[0].id, tag.id)
+      const { data: postDB, erro: postError } = await createPost(post);
+      if (!postDB) {
+        console.log("Post error:", postError);
+      }
+      const { created_at, title, path, series } = postDB[0];
+      const createdPost = [
+        {
+          created_at,
+          title,
+          path,
+          series,
+        },
+      ];
+      console.log("Create post:", !!createdPost.length);
+      console.table(createdPost);
+
+      if (!createdTags.length) {
+        for (const tag of tagList) {
+          const { data: tagDB, error: tagError } = await searchTag(tag.name);
+          if (!tagDB) {
+            console.log("Tag error:", tagError);
+          } else {
+            createdTags.push(tagDB[0]);
+          }
+        }
+        console.log("List tags:", !!createdTags.length);
+        console.table(createdTags);
+      }
+
+      const posTagsFK = [];
+      for (const tag of createdTags) {
+        const { data, error: dataError } = await createPostTagFk(
+          postDB[0].id,
+          tag.id
+        );
         if (!data) {
           console.log("Post Tag FK error:", dataError);
-          continue;
+        } else {
+          console.log("Post Tag FK:", data[0], dataError);
+          posTagsFK.push(data[0]);
         }
-        posTagsFK.push(data[0])
       }
-      console.log("Creat FK post tag:")
-      console.table(posTagsFK)
+      console.log("Creat FK post tag:", !!posTagsFK.length);
+      console.table(posTagsFK);
+
     }
   }
 
   if (deleted_files) {
     const files = convertStringToArray(deleted_files);
 
-    const deletedsPost = []
+    const deletedsPost = [];
     for (const file of files) {
       if (!file.endsWith(".md")) {
         continue;
       }
       const { post } = convertFrontmatter(file);
 
-      const { data, error } = deletePost(post.post_id)
+      const { data, error } = deletePost(post.post_id);
 
       if (!data) {
         console.log("Tag error:", error);
         continue;
       }
-      const { id, post_id, created_at, title, path, series } = data[0]
-      deletedsPost.push({ id, post_id, created_at, title, path, series })
+      const { id, post_id, created_at, title, path, series } = data[0];
+      deletedsPost.push({ id, post_id, created_at, title, path, series });
     }
-    console.table(deletedsPost)
+    console.table(deletedsPost);
   }
 
   if (modified_files) {
@@ -117,52 +132,56 @@ async function processPost() {
       const { post, tagList } = convertFrontmatter(file);
       const createdTags = [];
       for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await createTag(tag);
+        const { data: tagDB, error: tagError } = await createTag(tag.name);
         if (!tagDB) {
           console.log("Tag error:", tagError.details);
           continue;
         }
         createdTags.push(tagDB);
       }
-      console.table(createdTags)
+      console.table(createdTags);
 
-
-      const { data: postDB, erro: postError } = await updatePost(post)
+      const { data: postDB, erro: postError } = await updatePost(post);
       if (!postDB) {
         console.log("Post error:", postError.details);
         continue;
       }
-      const { id, post_id, created_at, title, path, series } = postDB[0]
-      console.table([{
-        id,
-        post_id,
-        created_at,
-        title,
-        path,
-        series
-      }])
+      const { id, post_id, created_at, title, path, series } = postDB[0];
+      console.table([
+        {
+          id,
+          post_id,
+          created_at,
+          title,
+          path,
+          series,
+        },
+      ]);
 
-      const tagsBD = []
+      const tagsBD = [];
       for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await searchTag(tag)
+        const { data: tagDB, error: tagError } = await searchTag(tag);
         if (!tagDB) {
           console.log("Tag error:", tagError);
           continue;
         }
-        tagsBD.push(...tagDB)
+        tagsBD.push(...tagDB);
       }
-      console.table(tagsBD)
+      console.table(tagsBD);
 
-      const posTagsFK = []
+      const posTagsFK = [];
       for (const tag of tagsBD) {
-        const { data, error: dataError } = await createPostTagFk(postDB[0].id, tag.id)
+        const { data, error: dataError } = await createPostTagFk(
+          postDB[0].id,
+          tag.id
+        );
         if (!data) {
           console.log("Post Tag FK error:", dataError);
           continue;
         }
-        posTagsFK.push(data[0])
+        posTagsFK.push(data[0]);
       }
-      console.table(posTagsFK)
+      console.table(posTagsFK);
     }
   }
 }
