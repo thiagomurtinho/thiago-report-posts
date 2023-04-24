@@ -27,10 +27,6 @@ jobs:
           json: "true"
           write_output_files: true
 
-        # To compare changes between the current commit and the last pushed remote commit set `since_last_remote_commit: true`. e.g
-        # with:
-        #   since_last_remote_commit: true
-
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_and_modified_files }}; do
@@ -45,15 +41,9 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           added_files: ${{ steps.changed-files.outputs.added_files }}
-          copied_files: ${{ steps.changed-files.outputs.copied_files }}
           deleted_files: ${{ steps.changed-files.outputs.deleted_files }}
           modified_files: ${{ steps.changed-files.outputs.modified_files }}
+          copied_files: ${{ steps.changed-files.outputs.copied_files }}
           renamed_files: ${{ steps.changed-files.outputs.renamed_files }}
-          type_changed_files: ${{ steps.changed-files.outputs.type_changed_files }}
-          unmerged_files: ${{ steps.changed-files.outputs.unmerged_files }}
-          unknown_files: ${{ steps.changed-files.outputs.unknown_files }}
-          all_changed_and_modified_files: ${{ steps.changed-files.outputs.all_changed_and_modified_files }}
-          all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
-          all_modified_files: ${{ steps.changed-files.outputs.all_modified_files }}
 
-        run: node check-frontmatter.js ${{ steps.changed-files.outputs.all_changed_and_modified_files }}
+        run: node post.mjs
