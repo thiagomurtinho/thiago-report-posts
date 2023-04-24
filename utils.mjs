@@ -15,11 +15,11 @@ import matter from "gray-matter";
 export function convertFrontmatter(file) {
   try {
     const content = fs.readFileSync(file, "utf8");
-    const frontmatter = matter(content).data;
-    const { tags } = frontmatter;
+    const post = matter(content).data;
+    const { tags } = post;
     const tagList = tags.map((tag) => ({ name: tag }));
 
-    delete frontmatter.tags;
+    delete post.tags;
 
     return { post, tagList };
   } catch (error) {
