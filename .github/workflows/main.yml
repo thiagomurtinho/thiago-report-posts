@@ -46,4 +46,4 @@ jobs:
           copied_files: ${{ steps.changed-files.outputs.copied_files }}
           renamed_files: ${{ steps.changed-files.outputs.renamed_files }}
 
-        run: node post.mjs
+        run: node posts.mjs
