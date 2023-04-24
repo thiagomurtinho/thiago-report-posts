@@ -2,7 +2,7 @@
 post_id: bef320e2-ba5f-401c-b9e9-4da4172d1087
 title: Ele VIVE! O backend com GitHub Actions + Supabase
 alias: ele-vive-o-backend-com-github-actions-supabase
-series: 
+series: Criando o meu blog
 cover_image: https://images.squarespace-cdn.com/content/v1/5e7d0e87853917613964998c/1586365377311-5U14I8VN4HY3NVLWV2FM/f2e1ab082e83ac27c667ae2d6102a3fe.jpg?format=750w
 path: posts/pt-br/backend/ele-vive-o-backend-com-github-actions-supabase.md
 created_at: 2023-04-21T02:23:24.2424-03:00
@@ -14,7 +14,7 @@ tags: [github-actions, supabase, obsidian]
 ![It's Alive!](https://images.squarespace-cdn.com/content/v1/5e7d0e87853917613964998c/1586365377311-5U14I8VN4HY3NVLWV2FM/f2e1ab082e83ac27c667ae2d6102a3fe.jpg?format=750w)
 
 tags: #github-actions #supabase #obsidian 
-series: 
+series: Criando o meu blog
 
 # Ele VIVE!! O backend com GitHub Actions + Supabase
 
