@@ -16,7 +16,7 @@ tags: [github-actions, supabase, obsidian]
 tags: #github-actions #supabase #obsidian 
 series: Criando o meu blog
 
-# Ele VIVE! O backend com GitHub Actions + Supabase
+# Ele VIVE!! O backend com GitHub Actions + Supabase
 
 
 ## Introdução 
