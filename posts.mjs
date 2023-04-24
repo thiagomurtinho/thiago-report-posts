@@ -18,7 +18,7 @@ const { added_files,
   renamed_files
 } = process.env;
 
-modifiedFiles.concat(copied_files, renamed_files)
+modified_files.concat(copied_files, renamed_files)
 
 async function processPost() {
   if (added_files) {
