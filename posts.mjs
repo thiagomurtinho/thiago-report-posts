@@ -22,9 +22,9 @@ const { added_files,
 modified_files.concat(copied_files, renamed_files)
 async function processPost() {
   if (added_files) {
-    // const files = convertStringToArray(added_files);
+    const files = convertStringToArray(added_files);
 
-    for (const file of added_files) {
+    for (const file of files) {
       if (!file.endsWith(".md")) {
         continue;
       }
@@ -85,10 +85,10 @@ async function processPost() {
   }
 
   if (deleted_files) {
-    // const files = convertStringToArray(deleted_files);
+    const files = convertStringToArray(deleted_files);
 
     const deletedsPost = []
-    for (const file of deleted_files) {
+    for (const file of files) {
       if (!file.endsWith(".md")) {
         continue;
       }
