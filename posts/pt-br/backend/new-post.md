@@ -1,22 +1,23 @@
 ---
-post_id: 1df96c59-7a94-4ff7-8a71-d6542d714bba
-title: Introdução
-alias: introducao
-series: Do poder
+post_id: bf55aaa7-824e-4ec9-a09c-598e2c8b06fd
+title: New Post
+alias: new-post
+series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/introducao.md
-created_at: 2023-04-24T01:28:28.2828-03:00
+path: posts/pt-br/backend/new-post.md
+created_at: 2023-04-24T01:31:45.4545-03:00
 lang: pt-br
 draft: false
-tags: [tag-do-poder]
+tags: [tag-asd, tag-fvgdbhns]
 ---
+
 
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-do-poder
-series: Do poder
+tags: #tag-asd #tag-fvgdbhns
+series: 
 
-# titulo do poder
+# New Post
 
 ## Introdução  
 
