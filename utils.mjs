@@ -13,11 +13,15 @@ import matter from "gray-matter";
 // }
 
 export function convertFrontmatter(file) {
+  console.log("🚀 ~ file: utils.mjs:16 ~ convertFrontmatter ~ file:", file)
   try {
     const content = fs.readFileSync(file, "utf8");
+    console.log("🚀 ~ file: utils.mjs:19 ~ convertFrontmatter ~ content:", content)
     const post = matter(content).data;
+    console.log("🚀 ~ file: utils.mjs:21 ~ convertFrontmatter ~ post:", post)
     const { tags } = post;
     const tagList = tags.map((tag) => ({ name: tag }));
+    console.log("🚀 ~ file: utils.mjs:24 ~ convertFrontmatter ~ tagList:", tagList)
 
     delete post.tags;
 

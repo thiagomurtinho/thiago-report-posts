@@ -18,7 +18,12 @@ const { added_files,
   renamed_files
 } = process.env;
 
+
 modified_files.concat(copied_files, renamed_files)
+
+console.log("🚀 ~ file: posts.mjs:15 ~ added_files:", added_files)
+console.log("🚀 ~ file: posts.mjs:16 ~ deleted_files:", deleted_files)
+console.log("🚀 ~ file: posts.mjs:22 ~ modified_files:", modified_files)
 
 async function processPost() {
   if (added_files) {
