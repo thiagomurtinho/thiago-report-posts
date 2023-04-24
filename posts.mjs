@@ -113,11 +113,13 @@ async function processPost() {
     // const files = convertStringToArray(modified_files);
 
     for (const file of modified_files) {
+      console.log("🚀 ~ file: posts.mjs:116 ~ processPost ~ file:", file)
       if (!file.endsWith(".md")) {
         continue;
       }
 
       const { post, tagList } = convertFrontmatter(file);
+      console.log("🚀 ~ file: posts.mjs:122 ~ processPost ~ post, tagList:", post, tagList)
 
       const createdTags = [];
       for (const tag of tagList) {
