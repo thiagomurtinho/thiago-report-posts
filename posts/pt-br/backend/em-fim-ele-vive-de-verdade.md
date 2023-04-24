@@ -1,23 +1,21 @@
 ---
-post_id: bf55aaa7-824e-4ec9-a09c-598e2c8b06fd
-title: New Post
-alias: new-post
+post_id: 8ec7defc-1e2d-4a5f-a393-c9be5beeebf3
+title: Em fim ele vive de verdade
+alias: em-fim-ele-vive-de-verdade
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/new-post.md
-created_at: 2023-04-24T01:31:45.4545-03:00
+path: posts/pt-br/backend/em-fim-ele-vive-de-verdade.md
+created_at: 2023-04-24T01:40:38.3838-03:00
 lang: pt-br
 draft: false
-tags: [tag-asd, tag-fvgdbhns]
+tags: []
 ---
-
-
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-asd #tag-fvgdbhns
+tags: 
 series: 
 
-# New Post
+# Em fim ele vive de verdade
 
 ## Introdução  
 
