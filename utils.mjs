@@ -38,7 +38,7 @@ export function convertStringToArray(str) {
   // const arrayJSON = JSON.parse(str.match(/"(.*)"/)[1]);
   // const arrayJSON = JSON.parse(str.match(/\[(.*)\]/)[0]);
   const arrayJSON = JSON.parse(str.match(/\[(.*)\]/)[0].replace(/\\/g, ''));
-  console.log("🚀 ~ file: utils.mjs:39 ~ convertStringToArray ~ arrayJSON:", arrayJSON)
+  console.log("🚀 ~ file: utils.mjs:39 ~ convertStringToArray ~ arrayJSON:", arrayJSON[0])
   console.log("🚀 ~ file: utils.mjs:41 ~ convertStringToArray ~ JSON.parse(arrayJSON[0]);:", JSON.parse(arrayJSON[0]))
   return JSON.parse(arrayJSON[0]);
 }
