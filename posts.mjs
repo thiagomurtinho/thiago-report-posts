@@ -110,9 +110,9 @@ async function processPost() {
   }
 
   if (modified_files) {
-    // const files = convertStringToArray(modified_files);
+    const files = convertStringToArray(modified_files);
 
-    for (const file of modified_files) {
+    for (const file of files) {
       console.log("🚀 ~ file: posts.mjs:116 ~ processPost ~ file:", file)
       if (!file.endsWith(".md")) {
         continue;
