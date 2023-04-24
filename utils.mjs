@@ -34,6 +34,9 @@ export function convertFrontmatter(file) {
 
 
 export function convertStringToArray(str) {
+  console.log("🚀 ~ file: utils.mjs:37 ~ convertStringToArray ~ str:", str)
   const arrayJSON = JSON.parse(str.match(/"(.*)"/)[1]);
+  console.log("🚀 ~ file: utils.mjs:39 ~ convertStringToArray ~ arrayJSON:", arrayJSON)
+  console.log("🚀 ~ file: utils.mjs:41 ~ convertStringToArray ~ JSON.parse(arrayJSON[0]);:", JSON.parse(arrayJSON[0]);)
   return JSON.parse(arrayJSON[0]);
 }
