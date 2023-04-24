@@ -8,11 +8,11 @@ path: posts/pt-br/backend/create-a-new-feature.md
 created_at: 2023-04-24T01:41:42.4242-03:00
 lang: pt-br
 draft: false
-tags: []
+tags: [tag-sinsitra, tag-do-poder]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: 
+tags:  #tag-sinsitra  #tag-do-poder
 series: 
 
 # Create a new feature
