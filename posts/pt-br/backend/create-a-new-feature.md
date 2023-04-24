@@ -8,7 +8,7 @@ path: posts/pt-br/backend/create-a-new-feature.md
 created_at: 2023-04-24T01:41:42.4242-03:00
 lang: pt-br
 draft: false
-tags: [tag-sinsitra, tag-do-poder]
+tags: [tag-sinsitra2, tag-do-poder2]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
