@@ -20,11 +20,6 @@ const { added_files,
 
 
 modified_files.concat(copied_files, renamed_files)
-
-console.log("🚀 ~ file: posts.mjs:15 ~ added_files:", added_files)
-console.log("🚀 ~ file: posts.mjs:16 ~ deleted_files:", deleted_files)
-console.log("🚀 ~ file: posts.mjs:22 ~ modified_files:", modified_files)
-
 async function processPost() {
   if (added_files) {
     // const files = convertStringToArray(added_files);
@@ -113,14 +108,11 @@ async function processPost() {
     const files = convertStringToArray(modified_files);
 
     for (const file of files) {
-      console.log("🚀 ~ file: posts.mjs:116 ~ processPost ~ file:", file)
       if (!file.endsWith(".md")) {
         continue;
       }
 
       const { post, tagList } = convertFrontmatter(file);
-      console.log("🚀 ~ file: posts.mjs:122 ~ processPost ~ post, tagList:", post, tagList)
-
       const createdTags = [];
       for (const tag of tagList) {
         const { data: tagDB, error: tagError } = await createTag(tag);
