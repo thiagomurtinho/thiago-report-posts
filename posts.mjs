@@ -33,13 +33,14 @@ async function processPost() {
 
       const createdTags = [];
       for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await createTag(tag);
+        const { data: tagDB, error: tagError } = await createTag(tag.name);
         if (!tagDB) {
           console.log("Tag error:", tagError.details);
           continue;
         }
         createdTags.push(tagDB);
       }
+      console.log("Created tags:")
       console.table(createdTags)
 
 
@@ -48,10 +49,9 @@ async function processPost() {
         console.log("Post error:", postError.details);
         continue;
       }
-      const { id, post_id, created_at, title, path, series } = postDB[0]
+      const { created_at, title, path, series } = postDB[0]
+      console.log("Created post:")
       console.table([{
-        id,
-        post_id,
         created_at,
         title,
         path,
@@ -67,6 +67,7 @@ async function processPost() {
         }
         tagsBD.push(...tagDB)
       }
+      console.log("List tags:")
       console.table(tagsBD)
 
       const posTagsFK = []
@@ -78,6 +79,7 @@ async function processPost() {
         }
         posTagsFK.push(data[0])
       }
+      console.log("Creat FK post tag:")
       console.table(posTagsFK)
     }
   }
