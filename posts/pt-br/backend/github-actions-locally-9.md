@@ -1,21 +1,21 @@
 ---
-post_id: 86cdc4e1-3c5e-49e8-a0b4-aa29ef0ab6f5
-title: GitHub Actions locally 8
-alias: github-actions-locally-8
+post_id: b56f360a-1bf2-49d2-b01d-e150277dd4c2
+title: GitHub Actions locally 9
+alias: github-actions-locally-9
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/github-actions-locally-8.md
-created_at: 2023-04-24T20:36:12.1212-03:00
+path: posts/pt-br/backend/github-actions-locally-9.md
+created_at: 2023-04-25T13:18:58.5858-03:00
 lang: pt-br
 draft: false
-tags: [outra-tag-!@#2, new-tag-sinistra-*_3, more-one-tag-&%&&]
+tags: [tag-final-more-7chdfg, tag-sucess-more-a56sdf]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-final-more #tag-sucess-more
+tags: #tag-final-more-7chdfg #tag-sucess-more-a56sdf
 series: 
 
-# GitHub Actions locally 8
+# GitHub Actions locally 9
 
 ## Introdução  
 
