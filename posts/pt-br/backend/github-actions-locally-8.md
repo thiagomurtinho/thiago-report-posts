@@ -8,7 +8,7 @@ path: posts/pt-br/backend/github-actions-locally-8.md
 created_at: 2023-04-24T20:36:12.1212-03:00
 lang: pt-br
 draft: false
-tags: [outra-tag-!@#2, new-tag-sinistra-*_3, more-one-tag-&%&&]
+tags: [outra-tag-!@#e, new-tag-sinistra-*_3, more-one-tag-&%&&]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 

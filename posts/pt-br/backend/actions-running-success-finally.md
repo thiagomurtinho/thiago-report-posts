@@ -1,25 +1,25 @@
 ---
-post_id: b56f360a-1bf2-49d2-b01d-e150277dd4c2
-title: GitHub Actions locally 9
-alias: github-actions-locally-9
+post_id: 7a7b0f37-ff5d-4fc2-aa17-91a2327ca49e
+title: Actions running success finally
+alias: actions-running-success-finally
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/github-actions-locally-9.md
-created_at: 2023-04-25T13:18:58.5858-03:00
+path: posts/pt-br/backend/actions-running-success-finally.md
+created_at: 2023-04-25T13:30:08.088-03:00
 lang: pt-br
 draft: false
-tags: [tag-final-more-7chdfg, tag-sucess-more-a56sdf]
+tags: [running, sucess-go]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-final-more-7chdfg #tag-sucess-more-a56sdf
+tags: #running #sucess-go
 series: 
 
-# GitHub Actions locally 9
+# Actions running success finally
 
 ## Introdução  
-
- asdasd
+uhull
+ 
 ## Seção de pré-requisitos  
 
  
