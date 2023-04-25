@@ -1,18 +1,18 @@
 ---
-post_id: 25929cdc-7f6f-4e41-b8ad-25148983556d
+post_id: 4e59b1d7-9597-4a29-9f35-ad8eab25ee6e
 title: GitHub Actions locally 6
 alias: github-actions-locally-6
 series: 
 cover_image: https://example.com/image-url.jpg
 path: posts/pt-br/backend/github-actions-locally-6.md
-created_at: 2023-04-24T19:52:37.3737-03:00
+created_at: 2023-04-24T20:20:25.2525-03:00
 lang: pt-br
 draft: false
-tags: [tag-final, tag-sucess]
+tags: [tag-finalASD2, tag-sucessASD2]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-final #tag-sucess
+tags: #tag-finalASD2 #tag-sucessASD2
 series: 
 
 # GitHub Actions locally 6

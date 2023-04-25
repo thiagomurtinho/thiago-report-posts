@@ -1,25 +1,25 @@
 ---
-post_id: 86cdc4e1-3c5e-49e8-a0b4-aa29ef0ab6f5
-title: GitHub Actions locally 8
-alias: github-actions-locally-8
-series: 
+post_id: b18e6a11-3d04-49c2-8110-bd1d1c8c3e5d
+title: Create brabo
+alias: create-brabo
+series: serie
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/github-actions-locally-8.md
-created_at: 2023-04-24T20:36:12.1212-03:00
+path: posts/pt-br/backend/create-brabo.md
+created_at: 2023-04-25T14:13:15.1515-03:00
 lang: pt-br
 draft: false
-tags: [outra-tag-!@#e234, new-tag-sinistra-*_3, more-one-tag-&%&&]
+tags: [tag-q-nada]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-final-more #tag-sucess-more
-series: 
+tags: #tag-q-nada
+series: serie
 
-# GitHub Actions locally 8
+# Create brabo
 
 ## Introdução  
 
- asdasd
+ 
 ## Seção de pré-requisitos  
 
  

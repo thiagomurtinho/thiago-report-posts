@@ -8,17 +8,17 @@ path: posts/pt-br/backend/github-actions-locally-7.md
 created_at: 2023-04-24T19:55:17.1717-03:00
 lang: pt-br
 draft: false
-tags: [tag-finalASD, tag-sucessASD]
+tags: [tag-finalASD123, tag-sucessASD123]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-finalASD #tag-sucessASD
+tags: #tag-finalASD2 #tag-sucessASD2
 series: 
 
 # GitHub Actions locally 7
 
 ## Introdução  
-
+biru biru
  
 ## Seção de pré-requisitos  
 
