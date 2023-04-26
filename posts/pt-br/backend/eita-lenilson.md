@@ -1,22 +1,22 @@
 ---
-post_id: fc72eeea-d778-4d5e-9b69-acedcd282b36
-title: Título dos mais sinistros e brabos
-alias: titulo-dos-mais-sinistros-e-brabos
+post_id: 3cb001bc-b6ad-45b6-852f-4cfae2228897
+title: Eita lenilson
+alias: eita-lenilson
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/titulo-dos-mais-sinistros-e-brabos.md
-created_at: 2023-04-26T01:04:53.5353-03:00
+path: posts/pt-br/backend/eita-lenilson.md
+created_at: 2023-04-26T01:14:51.5151-03:00
 lang: pt-br
 draft: false
-tags: [tag-sinistra, tag-sinistra-1]
+tags: [lenilson, eita]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag-sinistra #tag-sinistra-1
+tags: #lenilson #eita
 series: 
 
-# Título dos mais sinistros e brabos
-asd
+# Eita lenilson
+
 ## Introdução  
 
  

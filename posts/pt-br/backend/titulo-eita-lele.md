@@ -8,7 +8,7 @@ path: posts/pt-br/backend/titulo-eita-lele.md
 created_at: 2023-04-26T01:07:54.5454-03:00
 lang: pt-br
 draft: false
-tags: [eita, lele]
+tags: [eita, lele-2, lerere]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
