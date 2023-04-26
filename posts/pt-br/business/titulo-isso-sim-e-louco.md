@@ -8,7 +8,7 @@ path: posts/pt-br/business/titulo-isso-sim-e-louco.md
 created_at: 2023-04-26T02:07:12.1212-03:00
 lang: pt-br
 draft: false
-tags: [de-louco, q-lokura]
+tags: [de-louco, q-lokura-d+]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
