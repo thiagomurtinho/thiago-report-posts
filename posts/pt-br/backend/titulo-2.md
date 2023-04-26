@@ -8,7 +8,7 @@ path: posts/pt-br/backend/titulo-2.md
 created_at: 2023-04-26T00:12:43.4343-03:00
 lang: pt-br
 draft: false
-tags: [tag3, tag6]
+tags: [tag7, tag6]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
