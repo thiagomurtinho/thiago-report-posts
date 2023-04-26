@@ -8,7 +8,7 @@ path: posts/pt-br/business/titulo-lenilson.md
 created_at: 2023-04-26T01:37:24.2424-03:00
 lang: pt-br
 draft: false
-tags: [lenilson, lenilson2]
+tags: [lenilson, lenilso3, soverino]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
