@@ -8,7 +8,7 @@ path: posts/pt-br/Infrastructure/titulo-da-infra-boladona.md
 created_at: 2023-04-26T01:52:19.1919-03:00
 lang: pt-br
 draft: false
-tags: [infra, boladona-de-mais]
+tags: [infra, boladona-de-mais, muito-bolada]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
