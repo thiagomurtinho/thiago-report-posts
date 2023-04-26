@@ -1,21 +1,21 @@
 ---
-post_id: 39267837-529e-4daa-8174-6b8e2ac13f67
-title: Título lenilson
-alias: titulo-lenilson
+post_id: 091cf885-48ea-4562-a473-e99cfea4bf48
+title: Título da infra boladona
+alias: titulo-da-infra-boladona
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/business/titulo-lenilson.md
-created_at: 2023-04-26T01:37:24.2424-03:00
+path: posts/pt-br/Infrastructure/titulo-da-infra-boladona.md
+created_at: 2023-04-26T01:52:19.1919-03:00
 lang: pt-br
 draft: false
-tags: [lenilson, lenilso3, soverino]
+tags: [infra, boladona-de-mais]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #lenilson #lenilson2
+tags: #infra #boladona-de-mais
 series: 
 
-# Título lenilson
+# Título da infra boladona
 
 ## Introdução  
 

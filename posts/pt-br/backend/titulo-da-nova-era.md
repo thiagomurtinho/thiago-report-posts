@@ -8,7 +8,7 @@ path: posts/pt-br/backend/titulo-da-nova-era.md
 created_at: 2023-04-26T01:51:08.088-03:00
 lang: pt-br
 draft: false
-tags: [era, nova-era]
+tags: [era, nova-era2, mais-uma-era]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
