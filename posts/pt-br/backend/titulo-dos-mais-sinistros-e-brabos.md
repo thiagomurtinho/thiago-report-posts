@@ -1,21 +1,21 @@
 ---
-post_id: 60ba9785-3609-40b7-a76b-ab54999539e0
-title: Título 2
-alias: titulo-2
+post_id: fc72eeea-d778-4d5e-9b69-acedcd282b36
+title: Título dos mais sinistros e brabos
+alias: titulo-dos-mais-sinistros-e-brabos
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/titulo-2.md
-created_at: 2023-04-26T00:12:43.4343-03:00
+path: posts/pt-br/backend/titulo-dos-mais-sinistros-e-brabos.md
+created_at: 2023-04-26T01:04:53.5353-03:00
 lang: pt-br
 draft: false
-tags: [tag7, tag6]
+tags: [tag-sinistra, tag-sinistra-1]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #tag3 #tag4
+tags: #tag-sinistra #tag-sinistra-1
 series: 
 
-# Título 2
+# Título dos mais sinistros e brabos
 
 ## Introdução  
 
