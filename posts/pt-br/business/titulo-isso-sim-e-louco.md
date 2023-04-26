@@ -1,21 +1,21 @@
 ---
-post_id: 285ba9a2-9d1b-48fd-8bf6-40f6605d650a
-title: Título da nova era
-alias: titulo-da-nova-era
+post_id: adcf2955-5385-47c2-9987-499615218283
+title: Título isso sim é louco
+alias: titulo-isso-sim-e-louco
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/titulo-da-nova-era.md
-created_at: 2023-04-26T01:51:08.088-03:00
+path: posts/pt-br/business/titulo-isso-sim-e-louco.md
+created_at: 2023-04-26T02:07:12.1212-03:00
 lang: pt-br
 draft: false
-tags: [era, nova-era2, mais-uma-era]
+tags: [de-louco, q-lokura]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #era #nova-era
+tags: #de-louco #q-lokura
 series: 
 
-# Título da nova era
+# Título isso sim é louco
 
 ## Introdução  
 

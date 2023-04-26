@@ -8,7 +8,7 @@ path: posts/pt-br/frontend/titulo-da-loucura.md
 created_at: 2023-04-26T02:06:22.2222-03:00
 lang: pt-br
 draft: false
-tags: [tag-louca, uma-loucura]
+tags: [tag-louca-2, uma-loucura, duas-locuras]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
