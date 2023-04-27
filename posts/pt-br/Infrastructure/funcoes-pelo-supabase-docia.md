@@ -8,11 +8,11 @@ path: posts/pt-br/Infrastructure/funcoes-pelo-supabase-docia.md
 created_at: 2023-04-27T00:01:08.088-03:00
 lang: pt-br
 draft: false
-tags: [ia-e-o-poder, supabase-ia]
+tags: [ia-e-o-poder, supabase-ia+]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #ia-e-o-poder #supabase-ia
+tags: #ia-e-o-poder #supabase-ia_
 series: 
 
 # Funções pelo supabase docIA

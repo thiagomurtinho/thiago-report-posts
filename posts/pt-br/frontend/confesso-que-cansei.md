@@ -1,21 +1,21 @@
 ---
-post_id: 73985a66-7e93-42ca-8b60-667da7afe52a
-title: Título cria post
-alias: titulo-cria-post
+id: c89bb65a-ad6e-4340-b9fa-a45569b43222
+title: Confesso que cansei
+alias: confesso-que-cansei
 series: 
 cover_image: https://example.com/image-url.jpg
-path: posts/pt-br/backend/titulo-cria-post.md
-created_at: 2023-04-26T02:14:05.055-03:00
+path: posts/pt-br/frontend/confesso-que-cansei.md
+created_at: 2023-04-27T02:46:26.2626-03:00
 lang: pt-br
 draft: false
-tags: [cria-post]
+tags: [cansadao, e-bolado]
 ---
 ![Cover Image](https://example.com/image-url.jpg)
 
-tags: #cria-post
+tags: #cansadao #e-bolado
 series: 
 
-# Título cria post
+# Confesso que cansei
 
 ## Introdução  
 
