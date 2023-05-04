@@ -2,3 +2,5 @@
 node_modules/
 templates/
 .env
+
+.temp/
