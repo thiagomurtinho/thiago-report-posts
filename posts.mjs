@@ -1,23 +1,17 @@
 /**
  * TODO:
- * - [ ] Enviar edited_at para o supabase ao modificar arquivo
- * - [ ] Enviar edited_at junto com created_at para o supabase ao criar arquivo e com mesmo valor
- * - [ ] Enviar oublished_at para o supabase ao criar arquivo com draft false ou ao modificar arquivo para draft false
+ * - [ ] Modifie as vezes não cria tagsFK ⚠️
+ * - [ ] Converter add e modified para create/update com pipne unica
+ * - [ ] arraysCompare aceitar tags vazias []
+ * - [ ] Unifircar post_id e id
  */
 
 import dotenv from "dotenv";
-dotenv.config();
-
+import path from "path";
 import { convertFrontmatter, convertStringToArray } from "./utils.mjs";
-import {
-  createPost,
-  createPostTagFk,
-  createTag,
-  deletePost,
-  searchTag,
-  updatePost,
-} from "./supabase.mjs";
+import { processApplyChanges, processDeletePost } from "./supabase.mjs";
 
+dotenv.config();
 const {
   added_files,
   deleted_files,
@@ -26,162 +20,54 @@ const {
   renamed_files,
 } = process.env;
 
-modified_files.concat(copied_files, renamed_files);
+const modified_files_all = [
+  ...convertStringToArray(copied_files),
+  ...convertStringToArray(renamed_files),
+  ...convertStringToArray(modified_files),
+  ...convertStringToArray(added_files),
+];
+
 async function processPost() {
-  if (added_files) {
-    console.log("🦄 Added files:", added_files);
-    const files = convertStringToArray(added_files);
+  // if (added_files.length) {
+  //   const files = convertStringToArray(added_files);
+  //   console.log("🦄 Added files:", files);
+
+  //   for (const file of files) {
+  //     if (!file.endsWith(".md")) {
+  //       continue;
+  //     }
+  //     const post = convertFrontmatter(file);
+  //     const postApply = await processApplyChanges(post);
+  //     console.table(postApply);
+  //   }
+  // }
+
+  if (modified_files_all.length) {
+    console.log("🦄 Modified files:", modified_files_all);
+    const files = modified_files_all;
 
     for (const file of files) {
       if (!file.endsWith(".md")) {
-        return;
+        continue;
       }
 
-      const { post, tagList } = convertFrontmatter(file);
-
-      const createdTags = [];
-      for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await createTag(tag.name);
-        if (!tagDB) {
-          console.log("Tag error:", tagError);
-        } else {
-          createdTags.push(...tagDB);
-        }
-      }
-      console.log("Create tags:", !!createdTags.length);
-      console.table(createdTags);
-
-      const { data: postDB, erro: postError } = await createPost(post);
-      if (!postDB) {
-        console.log("Post error:", postError);
-      }
-      const { created_at, title, path, series } = postDB[0];
-      const createdPost = [
-        {
-          created_at,
-          title,
-          path,
-          series,
-        },
-      ];
-      console.log("Create post:", !!createdPost.length);
-      console.table(createdPost);
-
-      if (!createdTags.length) {
-        for (const tag of tagList) {
-          const { data: tagDB, error: tagError } = await searchTag(tag.name);
-          if (!tagDB) {
-            console.log("Tag error:", tagError);
-          } else {
-            createdTags.push(tagDB[0]);
-          }
-        }
-        console.log("List tags:", !!createdTags.length);
-        console.table(createdTags);
-      }
-
-      const posTagsFK = [];
-      for (const tag of createdTags) {
-        const { data, error: dataError } = await createPostTagFk(
-          postDB[0].id,
-          tag.id
-        );
-        if (!data) {
-          console.log("Post Tag FK error:", dataError);
-        } else {
-          console.log("Post Tag FK:", data[0], dataError);
-          posTagsFK.push(data[0]);
-        }
-      }
-      console.log("Creat FK post tag:", !!posTagsFK.length);
-      console.table(posTagsFK);
-
+      const post = convertFrontmatter(file);
+      const postApply = await processApplyChanges(post);
+      console.table(postApply);
     }
   }
 
-  if (deleted_files) {
+  if (deleted_files.length) {
     const files = convertStringToArray(deleted_files);
-
-    const deletedsPost = [];
-    for (const file of files) {
-      if (!file.endsWith(".md")) {
-        continue;
-      }
-      const { post } = convertFrontmatter(file);
-
-      const { data, error } = deletePost(post.post_id);
-
-      if (!data) {
-        console.log("Tag error:", error);
-        continue;
-      }
-      const { id, post_id, created_at, title, path, series } = data[0];
-      deletedsPost.push({ id, post_id, created_at, title, path, series });
-    }
-    console.table(deletedsPost);
-  }
-
-  if (modified_files) {
-    const files = convertStringToArray(modified_files);
+    console.log("🦄 Deleted files:", files);
 
     for (const file of files) {
       if (!file.endsWith(".md")) {
         continue;
       }
-
-      const { post, tagList } = convertFrontmatter(file);
-      const createdTags = [];
-      for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await createTag(tag.name);
-        if (!tagDB) {
-          console.log("Tag error:", tagError.details);
-          continue;
-        }
-        createdTags.push(tagDB);
-      }
-      console.table(createdTags);
-
-      const { data: postDB, erro: postError } = await updatePost(post);
-      if (!postDB) {
-        console.log("Post error:", postError.details);
-        continue;
-      }
-      const { id, post_id, created_at, title, path, series } = postDB[0];
-      console.table([
-        {
-          id,
-          post_id,
-          created_at,
-          title,
-          path,
-          series,
-        },
-      ]);
-
-      const tagsBD = [];
-      for (const tag of tagList) {
-        const { data: tagDB, error: tagError } = await searchTag(tag);
-        if (!tagDB) {
-          console.log("Tag error:", tagError);
-          continue;
-        }
-        tagsBD.push(...tagDB);
-      }
-      console.table(tagsBD);
-
-      const posTagsFK = [];
-      for (const tag of tagsBD) {
-        const { data, error: dataError } = await createPostTagFk(
-          postDB[0].id,
-          tag.id
-        );
-        if (!data) {
-          console.log("Post Tag FK error:", dataError);
-          continue;
-        }
-        posTagsFK.push(data[0]);
-      }
-      console.table(posTagsFK);
+      const alias = path.basename(file, ".md");
+      const deleted = await processDeletePost(alias);
+      console.table(deleted);
     }
   }
 }
