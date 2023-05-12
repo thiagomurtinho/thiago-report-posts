@@ -32,6 +32,7 @@ function fancyAlert(arg) {
  
 ## Corpo do artigo  
 
+
 ```ts
 import Link from 'next/link'
 
