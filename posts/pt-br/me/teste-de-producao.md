@@ -4,7 +4,7 @@ title: Teste de produção
 alias: teste-de-producao
 series: Inicial
 cover_image: https://images.unsplash.com/photo-1682685797208-c741d58c2eff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80
-path: posts/pt-br/test/teste-de-producao
+path: posts/pt-br/me/teste-de-producao
 created_at: 2023-05-04T00:38:49.4949-03:00
 lang: pt-br
 draft: false
